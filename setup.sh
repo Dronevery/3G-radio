@@ -23,7 +23,8 @@ fi
 echo /sbin/route add $1 dev \${IFNAME} > /etc/ppp/ip-up.d/3G
 /bin/chmod +x /etc/ppp/ip-up.d/3G
 /bin/mv /etc/rc.local /etc/rc.local.bak
-echo "/usr/sbin/pppd /dev/ttyUSB2 connect \"chat -v -f ${5}/chatscript \"" > /etc/rc.local
+echo \#\!/bin/bash > /etc/rc.local
+echo "/usr/sbin/pppd /dev/ttyUSB2 connect \"chat -v -f ${5}/chatscript \"" >> /etc/rc.local
 /usr/bin/apt-get update
 /usr/bin/apt-get install -y ppp python-wxgtk2.8 python-matplotlib python-opencv python-pip python-numpy
 /usr/bin/pip install mavproxy
