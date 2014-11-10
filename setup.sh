@@ -26,7 +26,6 @@ echo /sbin/route add $1 dev \${IFNAME} > /etc/ppp/ip-up.d/3G
 echo "/usr/sbin/pppd /dev/ttyUSB2 connect \"chat -v -f ${5}/chatscript \"" > /etc/rc.local
 /usr/bin/apt-get update
 /usr/bin/apt-get install -y ppp python-wxgtk2.8 python-matplotlib python-opencv python-pip python-numpy
-avproxy
 /usr/bin/pip install mavproxy
 /bin/cp /etc/inittab /etc/inittab.bak
 /bin/sed -i "/^T0:23:respawn/c #" /etc/inittab
