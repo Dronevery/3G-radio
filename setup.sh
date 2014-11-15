@@ -26,7 +26,7 @@ echo /sbin/route add $1 dev \${IFNAME} > /etc/ppp/ip-up.d/3G
 /bin/chmod +x /etc/ppp/ip-up.d/3G
 /bin/mv /etc/rc.local /etc/rc.local.bak
 echo \#\!/bin/bash > /etc/rc.local
-echo "/usr/sbin/pppd /dev/ttyUSB2 connect \"chat -v -f ${5}/chatscript \"" >> /etc/rc.local
+echo "/usr/sbin/pppd /dev/ttyUSB2 connect \"chat -v -f ${4}/chatscript \"" >> /etc/rc.local
 /usr/bin/pip install mavproxy
 /bin/cp /etc/inittab /etc/inittab.bak
 /bin/sed -i "/^T0:23:respawn/c #" /etc/inittab
